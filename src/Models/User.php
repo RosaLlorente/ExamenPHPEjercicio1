@@ -15,7 +15,7 @@ class User{
         private string $compania,
         private string $email,
         private string $password,
-        private string $role,
+        private string $role = 'user',
     ){
         $this->id = $id;
         $this->nombre = $nombre;
@@ -199,17 +199,10 @@ class User{
         }
 
         // Validacion campo compania
-        if(empty($this->compania))
+        $patron = '/^[a-zA-Z, ]*$/';
+        if(!preg_match($patron,$this->compania))
         {
-            self::$errores[] = 'La compañia es obligatorio';
-        }
-        else
-        {
-            $patron = '/^[a-zA-Z, ]*$/';
-            if(!preg_match($patron,$this->compania))
-            {
-                self::$errores[] = 'La compañia no es valido';
-            }
+            self::$errores[] = 'La compañia no es valido';
         }
 
         //Validacion campo email

@@ -27,8 +27,13 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?=BASE_URL?>">Ver Contenido</a>
+                            <a class="nav-link active" aria-current="page" href="<?=BASE_URL?>">Nuestros Especialistas</a>
                         </li>
+                        <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="<?=BASE_URL?>">Administrar</a>
+                        </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <?php if(!isset($_SESSION['user_id'])): ?>

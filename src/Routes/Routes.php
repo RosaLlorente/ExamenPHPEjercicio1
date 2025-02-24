@@ -3,13 +3,15 @@ namespace Routes;
 use Lib\Router;
 use Controllers\UserController;
 use Controllers\ErrorController;
+use Controllers\MedicosController;
 
 class Routes{
     public static function index(){
-        //User
         Router::add('GET','/',function(){
-            (new UserController())->index();
+            (new MedicosController())->ListMedicos();
         });
+        //User
+        
         Router::add('GET','/register',function(){
             (new UserController())->Register();
         });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TiendaPHP</title>
+    <title>Clinica</title>
 
     <!--ENLACE CSS DE BOOTSTRAP-->
     <link
@@ -27,14 +27,14 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?=BASE_URL?>">Ver Catalogo</a>
+                            <a class="nav-link active" aria-current="page" href="<?=BASE_URL?>">Ver Contenido</a>
                         </li>
                     </ul>
                 </div>
                 <?php if(!isset($_SESSION['user_id'])): ?>
                     <div>
-                        <a class="btn btn-outline-success" href="<?=BASE_URL?>">Iniciar Sesión</a>
-                        <a class="btn btn-outline-success" href="<?=BASE_URL?>">Registrarse</a>
+                        <a class="btn btn-outline-success" href="<?=BASE_URL?>login">Iniciar Sesión</a>
+                        <a class="btn btn-outline-success" href="<?=BASE_URL?>register">Registrarse</a>
                     </div>
                 <?php else: ?>
                     
